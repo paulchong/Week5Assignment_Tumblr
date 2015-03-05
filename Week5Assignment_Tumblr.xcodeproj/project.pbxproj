@@ -14,6 +14,7 @@
 		880EBB2A1AA8132B001639B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880EBB281AA8132B001639B4 /* LaunchScreen.xib */; };
 		880EBB361AA8132B001639B4 /* Week5Assignment_TumblrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB351AA8132B001639B4 /* Week5Assignment_TumblrTests.swift */; };
 		880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */; };
+		880EBB421AA8CDA1001639B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB411AA8CDA1001639B4 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		880EBB341AA8132B001639B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880EBB351AA8132B001639B4 /* Week5Assignment_TumblrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week5Assignment_TumblrTests.swift; sourceTree = "<group>"; };
 		880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		880EBB411AA8CDA1001639B4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				880EBB1F1AA8132B001639B4 /* AppDelegate.swift */,
 				880EBB211AA8132B001639B4 /* ViewController.swift */,
 				880EBB231AA8132B001639B4 /* Main.storyboard */,
+				880EBB411AA8CDA1001639B4 /* HomeViewController.swift */,
 				880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */,
 				880EBB261AA8132B001639B4 /* Images.xcassets */,
 				880EBB281AA8132B001639B4 /* LaunchScreen.xib */,
@@ -218,6 +221,7 @@
 				880EBB221AA8132B001639B4 /* ViewController.swift in Sources */,
 				880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */,
 				880EBB201AA8132B001639B4 /* AppDelegate.swift in Sources */,
+				880EBB421AA8CDA1001639B4 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				880EBB3B1AA8132B001639B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		880EBB3C1AA8132B001639B4 /* Build configuration list for PBXNativeTarget "Week5Assignment_TumblrTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				880EBB3E1AA8132B001639B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

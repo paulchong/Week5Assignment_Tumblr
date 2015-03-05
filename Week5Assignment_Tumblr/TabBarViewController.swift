@@ -10,20 +10,38 @@ import UIKit
 
 class TabBarViewController: UIViewController {
 
-    
+    // setting up buttons in tab bar
     @IBOutlet weak var homeButton: UIButton!
     var isHighLighted:Bool = false
-    
+    // calling and initializing images from images folder
     let home_icon = UIImage(named: "home_icon") as UIImage?
     let home_selected_icon = UIImage(named: "home_selected_icon") as UIImage?
+    let trending_icon = UIImage(named: "trending_icon") as UIImage?
+    let trending_selected_icon = UIImage(named: "trending_selected_icon") as UIImage?
+    
+    // setting up the subviews
+    @IBOutlet weak var homeViewContainer: UIView!
+    var homeViewController: HomeViewController!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // adding highlighting behaviour for buttons
         homeButton.setImage(home_icon, forState: .Normal)
         homeButton.setImage(home_selected_icon, forState: .Highlighted)
 
-        // Do any additional setup after loading the view.
+        // defining storyboards
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
+        
+        // adding view controllers to the view
+        addChildViewController(homeViewController)
+        homeViewController.view.frame = homeViewContainer.frame
+        homeViewContainer.addSubview(homeViewController.view)
+        homeViewController.didMoveToParentViewController(self)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +62,6 @@ class TabBarViewController: UIViewController {
 
     
     @IBAction func didPressHomeButton(sender: UIButton) {
-        sender.setImage(home_selected_icon, forState: UIControlState.Highlighted)
         
         dispatch_async(dispatch_get_main_queue(), {
             
@@ -56,7 +73,6 @@ class TabBarViewController: UIViewController {
                 self.isHighLighted = false
             }
         })
-        println(isHighLighted)
         
     }
     
@@ -74,3 +90,12 @@ class TabBarViewController: UIViewController {
     
     
 }
+
+
+// questions to address:
+//  1. how to ensure when one button is highlighted, that all other buttons are no longer highlighted.  How to do this efficiently?
+//  2. how to encapsulate the highlighting code in a function, instead of writing it out for each button.
+//   - assume need to call image, create action, create variable for each button and iamge, but highlighting code should be modularised
+
+//  Quesiton for Joe:  does it make sense to have a single view container on the hamburger referenced by all view controllers, or have one for each view controller?
+
