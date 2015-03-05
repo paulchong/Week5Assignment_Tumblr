@@ -13,6 +13,7 @@
 		880EBB271AA8132B001639B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880EBB261AA8132B001639B4 /* Images.xcassets */; };
 		880EBB2A1AA8132B001639B4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880EBB281AA8132B001639B4 /* LaunchScreen.xib */; };
 		880EBB361AA8132B001639B4 /* Week5Assignment_TumblrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB351AA8132B001639B4 /* Week5Assignment_TumblrTests.swift */; };
+		880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		880EBB2F1AA8132B001639B4 /* Week5Assignment_TumblrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Week5Assignment_TumblrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EBB341AA8132B001639B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880EBB351AA8132B001639B4 /* Week5Assignment_TumblrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week5Assignment_TumblrTests.swift; sourceTree = "<group>"; };
+		880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				880EBB1F1AA8132B001639B4 /* AppDelegate.swift */,
 				880EBB211AA8132B001639B4 /* ViewController.swift */,
 				880EBB231AA8132B001639B4 /* Main.storyboard */,
+				880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */,
 				880EBB261AA8132B001639B4 /* Images.xcassets */,
 				880EBB281AA8132B001639B4 /* LaunchScreen.xib */,
 				880EBB1D1AA8132B001639B4 /* Supporting Files */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				880EBB221AA8132B001639B4 /* ViewController.swift in Sources */,
+				880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */,
 				880EBB201AA8132B001639B4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
