@@ -12,16 +12,26 @@ class TabBarViewController: UIViewController {
 
     // setting up buttons in tab bar
     @IBOutlet weak var homeButton: UIButton!
-    var isHighLighted:Bool = false
+    var homeIsHighLighted:Bool = false
+    
+    @IBOutlet weak var accountButton: UIButton!
+    var accountIsHighLighted:Bool = false
+    
     // calling and initializing images from images folder
     let home_icon = UIImage(named: "home_icon") as UIImage?
     let home_selected_icon = UIImage(named: "home_selected_icon") as UIImage?
     let trending_icon = UIImage(named: "trending_icon") as UIImage?
     let trending_selected_icon = UIImage(named: "trending_selected_icon") as UIImage?
+    let account_icon = UIImage(named: "account_icon") as UIImage?
+    let account_selected_icon = UIImage(named: "account_selected_icon") as UIImage?
+    
     
     // setting up the subviews
     @IBOutlet weak var homeViewContainer: UIView!
     var homeViewController: HomeViewController!
+    
+    @IBOutlet weak var accountViewContainer: UIView!
+    var accountViewController: AccountViewController!
     
     
     
@@ -30,10 +40,14 @@ class TabBarViewController: UIViewController {
         // adding highlighting behaviour for buttons
         homeButton.setImage(home_icon, forState: .Normal)
         homeButton.setImage(home_selected_icon, forState: .Highlighted)
+        accountButton.setImage(account_icon, forState: .Normal)
+        accountButton.setImage(account_selected_icon, forState: .Highlighted)
 
+        
         // defining storyboards
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as AccountViewController
         
         // adding view controllers to the view
         addChildViewController(homeViewController)
@@ -41,6 +55,10 @@ class TabBarViewController: UIViewController {
         homeViewContainer.addSubview(homeViewController.view)
         homeViewController.didMoveToParentViewController(self)
         
+        addChildViewController(accountViewController)
+        accountViewController.view.frame = accountViewContainer.frame
+        accountViewContainer.addSubview(accountViewController.view)
+        accountViewController.didMoveToParentViewController(self)
         
     }
 
@@ -62,34 +80,64 @@ class TabBarViewController: UIViewController {
 
     
     @IBAction func didPressHomeButton(sender: UIButton) {
-        
         dispatch_async(dispatch_get_main_queue(), {
             
-            if self.isHighLighted == false{
+            if self.homeIsHighLighted == false{
                 sender.highlighted = true;
-                self.isHighLighted = true
+                self.homeIsHighLighted = true
             }else{
                 sender.highlighted = false;
-                self.isHighLighted = false
+                self.homeIsHighLighted = false
             }
         })
+
+        hideViewContainers()
+        homeViewContainer.hidden = false
+    }
+    
+    @IBAction func didPressSearchButton(sender: UIButton) {
+    }
+    
+    @IBAction func didPressComposeButton(sender: UIButton) {
+    }
+    
+    @IBAction func didPressAccountButton(sender: UIButton) {
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            if self.accountIsHighLighted == false{
+                sender.highlighted = true;
+                self.accountIsHighLighted = true
+            }else{
+                sender.highlighted = false;
+                self.accountIsHighLighted = false
+            }
+        })
+        hideViewContainers()
+        accountViewContainer.hidden = false
+    }
+    
+    @IBAction func didPressTrendingButton(sender: UIButton) {
+    }
+    
+    // function to make all viewContainers hidden
+    
+    func hideViewContainers(){
+        accountViewContainer.hidden = true
+        homeViewContainer.hidden = true
         
     }
     
-    @IBAction func didPressSearchButton(sender: AnyObject) {
-    }
+    // function to make all buttons unhighlighted
     
-    @IBAction func didPressComposeButton(sender: AnyObject) {
-    }
-    
-    @IBAction func didPressAccountButton(sender: AnyObject) {
-    }
-    
-    @IBAction func didPressTrendingButton(sender: AnyObject) {
+    func unhighlightButtons(){
+        
     }
     
     
 }
+
+// Next Steps:
+//  1. complete the unhighlightButtons function:  when called it ensures all buttons revert to unhighlighted mode
 
 
 // questions to address:
