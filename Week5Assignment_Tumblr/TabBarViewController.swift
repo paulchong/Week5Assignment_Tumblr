@@ -81,7 +81,6 @@ class TabBarViewController: UIViewController {
     
     @IBAction func didPressHomeButton(sender: UIButton) {
         dispatch_async(dispatch_get_main_queue(), {
-            
             if self.homeIsHighLighted == false{
                 sender.highlighted = true;
                 self.homeIsHighLighted = true
@@ -103,7 +102,6 @@ class TabBarViewController: UIViewController {
     
     @IBAction func didPressAccountButton(sender: UIButton) {
         dispatch_async(dispatch_get_main_queue(), {
-            
             if self.accountIsHighLighted == false{
                 sender.highlighted = true;
                 self.accountIsHighLighted = true
@@ -130,7 +128,9 @@ class TabBarViewController: UIViewController {
     // function to make all buttons unhighlighted
     
     func unhighlightButtons(){
-        
+        println("unhighlightButtons working")
+        homeIsHighLighted = false
+        accountIsHighLighted = false
     }
     
     
