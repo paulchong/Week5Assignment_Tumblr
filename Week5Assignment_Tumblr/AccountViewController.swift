@@ -1,21 +1,23 @@
 //
-//  HomeViewController.swift
+//  AccountViewController.swift
 //  Week5Assignment_Tumblr
 //
-//  Created by Paul Chong on 3/5/15.
+//  Created by Paul Chong on 3/6/15.
 //  Copyright (c) 2015 Paul Chong. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class AccountViewController: UIViewController {
 
-    @IBOutlet weak var homeScrollView: UIScrollView!
+    @IBOutlet weak var accountScrollView: UIScrollView!
     
+    @IBOutlet weak var accountImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        homeScrollView.contentSize = CGSize(width: 320, height: 524)
+        accountScrollView.contentSize = accountImage.frame.size
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
