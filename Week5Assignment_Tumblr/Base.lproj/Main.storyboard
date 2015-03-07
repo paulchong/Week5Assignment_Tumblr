@@ -41,6 +41,34 @@
             </objects>
             <point key="canvasLocation" x="-160" y="1618"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="w1K-N7-fQo">
+            <objects>
+                <viewController storyboardIdentifier="ComposeViewController" id="db4-7k-VhB" customClass="ComposeViewController" customModule="Week5Assignment_Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="gKB-Dx-q1q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="A3G-ec-Z5O">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" image="nevermind" id="BXa-fo-QH2">
+                                        <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.080693417369419734" green="0.20904516319863012" blue="0.32175268308080807" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xEi-gL-X1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="1618"/>
+        </scene>
         <!--Account View Controller-->
         <scene sceneID="OyS-2w-aYd">
             <objects>
@@ -79,15 +107,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" id="74s-88-BBx" userLabel="accountView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" id="31i-fP-tWf" userLabel="homeView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="74s-88-BBx" userLabel="accountView">
+                            <view contentMode="scaleToFill" id="eug-sG-Jkc" userLabel="composeView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" id="1UW-q8-Y9o" userLabel="tabBarView">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -152,6 +184,7 @@
                     <connections>
                         <outlet property="accountButton" destination="MdY-hb-zPz" id="efN-nG-Nej"/>
                         <outlet property="accountViewContainer" destination="74s-88-BBx" id="fog-K0-Mp4"/>
+                        <outlet property="composeViewContainer" destination="eug-sG-Jkc" id="bJg-mx-CJD"/>
                         <outlet property="homeButton" destination="oG4-9k-Sfy" id="JnD-VM-kND"/>
                         <outlet property="homeViewContainer" destination="31i-fP-tWf" id="eD3-IK-aTs"/>
                     </connections>
@@ -168,6 +201,7 @@
         <image name="home" width="320" height="524"/>
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
+        <image name="nevermind" width="320" height="53"/>
         <image name="search_icon" width="35" height="35"/>
         <image name="trending_icon" width="35" height="35"/>
     </resources>

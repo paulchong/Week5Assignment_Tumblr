@@ -33,6 +33,8 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var accountViewContainer: UIView!
     var accountViewController: AccountViewController!
     
+    @IBOutlet weak var composeViewContainer: UIView!
+    var composeViewController: ComposeViewController!
     
     
     override func viewDidLoad() {
@@ -48,6 +50,7 @@ class TabBarViewController: UIViewController {
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as AccountViewController
+        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as ComposeViewController
         
         // adding view controllers to the view
         addChildViewController(homeViewController)
@@ -60,6 +63,12 @@ class TabBarViewController: UIViewController {
         accountViewContainer.addSubview(accountViewController.view)
         accountViewController.didMoveToParentViewController(self)
         
+        addChildViewController(composeViewController)
+        composeViewController.view.frame = composeViewContainer.frame
+        composeViewContainer.addSubview(composeViewController.view)
+        composeViewController.didMoveToParentViewController(self)
+        
+//        showViewController(accountViewController, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,6 +107,8 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func didPressComposeButton(sender: UIButton) {
+//        hideViewContainers()
+        composeViewContainer.hidden = false
     }
     
     @IBAction func didPressAccountButton(sender: UIButton) {
@@ -122,6 +133,7 @@ class TabBarViewController: UIViewController {
     func hideViewContainers(){
         accountViewContainer.hidden = true
         homeViewContainer.hidden = true
+        composeViewContainer.hidden = true
         
     }
     
@@ -137,6 +149,7 @@ class TabBarViewController: UIViewController {
 }
 
 // Next Steps:
+//  0. fix compose view.  Understand why it is not surfacing.  Might just be xCode bug from moving around views
 //  1. complete the unhighlightButtons function:  when called it ensures all buttons revert to unhighlighted mode
 
 

@@ -16,6 +16,7 @@
 		880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */; };
 		880EBB421AA8CDA1001639B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB411AA8CDA1001639B4 /* HomeViewController.swift */; };
 		880EBB441AA9FE5F001639B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB431AA9FE5F001639B4 /* AccountViewController.swift */; };
+		880EBB461AAA49F3001639B4 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB451AAA49F3001639B4 /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		880EBB411AA8CDA1001639B4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		880EBB431AA9FE5F001639B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		880EBB451AAA49F3001639B4 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				880EBB1F1AA8132B001639B4 /* AppDelegate.swift */,
 				880EBB211AA8132B001639B4 /* ViewController.swift */,
 				880EBB231AA8132B001639B4 /* Main.storyboard */,
+				880EBB451AAA49F3001639B4 /* ComposeViewController.swift */,
 				880EBB431AA9FE5F001639B4 /* AccountViewController.swift */,
 				880EBB411AA8CDA1001639B4 /* HomeViewController.swift */,
 				880EBB3F1AA8155A001639B4 /* TabBarViewController.swift */,
@@ -224,6 +227,7 @@
 				880EBB221AA8132B001639B4 /* ViewController.swift in Sources */,
 				880EBB441AA9FE5F001639B4 /* AccountViewController.swift in Sources */,
 				880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */,
+				880EBB461AAA49F3001639B4 /* ComposeViewController.swift in Sources */,
 				880EBB201AA8132B001639B4 /* AppDelegate.swift in Sources */,
 				880EBB421AA8CDA1001639B4 /* HomeViewController.swift in Sources */,
 			);
