@@ -18,10 +18,7 @@ class TabBarViewController: UIViewController {
     
     //create button array
     @IBOutlet var buttons: [UIButton]!
-    
-    var selectedIndex: Int!
-    
-    
+    var selectedIndex: Int! = 0
     
     // calling and initializing images from images folder
     let home_icon = UIImage(named: "home_icon") as UIImage?
@@ -34,16 +31,20 @@ class TabBarViewController: UIViewController {
     let search_selected_icon = UIImage(named: "search_selected_icon") as UIImage?
 
     
-    
     // setting up the subviews
-    @IBOutlet weak var homeViewContainer: UIView!
-    var homeViewController: HomeViewController!
-    
-    @IBOutlet weak var accountViewContainer: UIView!
-    var accountViewController: AccountViewController!
-    
     @IBOutlet weak var composeViewContainer: UIView!
     var composeViewController: ComposeViewController!
+
+    var homeViewController: UIViewController!
+    var searchViewController: UIViewController!
+    var accountViewController: UIViewController!
+    var trendingViewController: UIViewController!
+
+    
+    // create array to hold view controllers
+    var viewControllersArray: [UIViewController]! = [UIViewController]()
+    
+    @IBOutlet weak var contentViewContainer: UIView!
     
     
     override func viewDidLoad() {
@@ -60,27 +61,29 @@ class TabBarViewController: UIViewController {
         
         // defining storyboards
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as HomeViewController
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as AccountViewController
+
+        // compose view controller
         composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as ComposeViewController
-        
-        // adding view controllers to the view
-        addChildViewController(homeViewController)
-        homeViewController.view.frame = homeViewContainer.frame
-        homeViewContainer.addSubview(homeViewController.view)
-        homeViewController.didMoveToParentViewController(self)
-        
-        addChildViewController(accountViewController)
-        accountViewController.view.frame = accountViewContainer.frame
-        accountViewContainer.addSubview(accountViewController.view)
-        accountViewController.didMoveToParentViewController(self)
         
         addChildViewController(composeViewController)
         composeViewController.view.frame = composeViewContainer.frame
         composeViewContainer.addSubview(composeViewController.view)
         composeViewController.didMoveToParentViewController(self)
+
         
-//        showViewController(accountViewController, sender: self)
+        // all other view controllers
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
+        
+        viewControllersArray = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
+        
+        addChildViewController(viewControllersArray[selectedIndex])
+        viewControllersArray[selectedIndex].view.frame = contentViewContainer.frame
+        contentViewContainer.addSubview(viewControllersArray[selectedIndex].view)
+        viewControllersArray[selectedIndex].didMoveToParentViewController(self)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,38 +102,9 @@ class TabBarViewController: UIViewController {
     }
     */
 
-    
-    @IBAction func didPressHomeButton(sender: UIButton) {
-        hideViewContainers()
-        homeViewContainer.hidden = false
-    }
-    
-    @IBAction func didPressSearchButton(sender: UIButton) {
-    }
-    
     @IBAction func didPressComposeButton(sender: UIButton) {
-//        hideViewContainers()
         composeViewContainer.hidden = false
     }
-    
-    @IBAction func didPressAccountButton(sender: UIButton) {
-        hideViewContainers()
-        accountViewContainer.hidden = false
-    }
-    
-    @IBAction func didPressTrendingButton(sender: UIButton) {
-    }
-    
-    // function to make all viewContainers hidden
-    
-    func hideViewContainers(){
-        accountViewContainer.hidden = true
-        homeViewContainer.hidden = true
-        composeViewContainer.hidden = true
-        
-    }
-    
-    
     
     @IBAction func didPressTabBar(sender: UIButton) {
         println(sender.tag)
@@ -139,7 +113,6 @@ class TabBarViewController: UIViewController {
         for button in buttons {
             button.highlighted = false
         }
-
         
         dispatch_async(dispatch_get_main_queue(), {
             if self.buttons[self.selectedIndex].highlighted == false{
@@ -150,6 +123,7 @@ class TabBarViewController: UIViewController {
                 self.buttons[self.selectedIndex].highlighted = false
             }
         })
+
         
         
     }

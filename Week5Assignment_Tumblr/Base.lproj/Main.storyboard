@@ -48,6 +48,12 @@
                     <view key="view" contentMode="scaleToFill" id="xpH-Ob-i6i">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-1" id="Wvg-Xt-tOj">
+                                <rect key="frame" x="130" y="280" width="61" height="19"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -102,6 +108,12 @@
                     <view key="view" contentMode="scaleToFill" id="vUy-a2-75L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trending_feed" id="0pz-wZ-6BW">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -147,19 +159,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="74s-88-BBx" userLabel="accountView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" id="eug-sG-Jkc" userLabel="composeView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
-                            <view contentMode="scaleToFill" id="31i-fP-tWf" userLabel="homeView">
+                            <view contentMode="scaleToFill" id="mh9-OK-CpV" userLabel="contentView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </view>
                             <view contentMode="scaleToFill" id="1UW-q8-Y9o" userLabel="tabBarView">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
@@ -172,7 +178,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressHomeButton:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="U2e-y7-ftZ"/>
                                             <action selector="didPressTabBar:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="WQ0-q7-zsV"/>
                                         </connections>
                                     </button>
@@ -184,7 +189,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressSearchButton:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="wEp-2L-2a1"/>
                                             <action selector="didPressTabBar:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="0bX-vh-rAG"/>
                                         </connections>
                                     </button>
@@ -206,7 +210,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressAccountButton:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="ERC-RE-fZ1"/>
                                             <action selector="didPressTabBar:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="ORS-8w-dqO"/>
                                         </connections>
                                     </button>
@@ -221,7 +224,6 @@
                                         </state>
                                         <connections>
                                             <action selector="didPressTabBar:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="gJG-zQ-jiP"/>
-                                            <action selector="didPressTrendingButton:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="PLi-0d-5IJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -232,10 +234,9 @@
                     </view>
                     <connections>
                         <outlet property="accountButton" destination="MdY-hb-zPz" id="efN-nG-Nej"/>
-                        <outlet property="accountViewContainer" destination="74s-88-BBx" id="fog-K0-Mp4"/>
                         <outlet property="composeViewContainer" destination="eug-sG-Jkc" id="bJg-mx-CJD"/>
+                        <outlet property="contentViewContainer" destination="mh9-OK-CpV" id="k4X-rO-old"/>
                         <outlet property="homeButton" destination="oG4-9k-Sfy" id="JnD-VM-kND"/>
-                        <outlet property="homeViewContainer" destination="31i-fP-tWf" id="eD3-IK-aTs"/>
                         <outlet property="searchButton" destination="sJ6-TC-xnv" id="eqi-Ef-BUi"/>
                         <outlet property="trendingButton" destination="XPa-yx-tLh" id="koU-eL-urN"/>
                         <outletCollection property="buttons" destination="oG4-9k-Sfy" collectionClass="NSMutableArray" id="CyQ-fH-8mw"/>
@@ -258,8 +259,10 @@
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
+        <image name="loading-1" width="61" height="19"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="search_icon" width="35" height="35"/>
+        <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
