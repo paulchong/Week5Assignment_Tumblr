@@ -45,7 +45,7 @@
         <scene sceneID="w1K-N7-fQo">
             <objects>
                 <viewController storyboardIdentifier="ComposeViewController" id="db4-7k-VhB" customClass="ComposeViewController" customModule="Week5Assignment_Tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" alpha="0.80000000000000004" contentMode="scaleToFill" id="gKB-Dx-q1q">
+                    <view key="view" alpha="0.90000000000000002" contentMode="scaleToFill" id="gKB-Dx-q1q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -53,9 +53,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" image="nevermind" id="BXa-fo-QH2">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nevermind" id="BXa-fo-QH2">
                                         <rect key="frame" x="0.0" y="515" width="320" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="DTQ-67-1Ty" appends="YES" id="4S2-wa-rGb"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -64,8 +68,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="tapGestureRecognizer" destination="DTQ-67-1Ty" id="44d-Rj-FKx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEi-gL-X1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DTQ-67-1Ty">
+                    <connections>
+                        <action selector="didTapOnNevermind:" destination="db4-7k-VhB" id="kp3-m1-Zb6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="167" y="1618"/>
         </scene>
@@ -117,10 +129,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="eug-sG-Jkc" userLabel="composeView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
                             <view contentMode="scaleToFill" id="1UW-q8-Y9o" userLabel="tabBarView">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +136,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oG4-9k-Sfy">
                                         <rect key="frame" x="14" y="3" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal">
+                                        <state key="normal" image="home_icon">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -178,6 +186,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" id="eug-sG-Jkc" userLabel="composeView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -199,6 +211,7 @@
         <image name="account_icon" width="35" height="35"/>
         <image name="compose_button" width="50" height="35"/>
         <image name="home" width="320" height="524"/>
+        <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="nevermind" width="320" height="53"/>

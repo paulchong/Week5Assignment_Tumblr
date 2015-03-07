@@ -149,7 +149,7 @@ class TabBarViewController: UIViewController {
 }
 
 // Next Steps:
-//  0. fix compose view.  Understand why it is not surfacing.  Might just be xCode bug from moving around views
+//  0. connect the tap gesture on composeVC to an event in tabBarVC - refer to previous projects
 //  1. complete the unhighlightButtons function:  when called it ensures all buttons revert to unhighlighted mode
 
 

@@ -10,6 +10,11 @@ import UIKit
 
 class ComposeViewController: UIViewController {
 
+    
+    @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,11 @@ class ComposeViewController: UIViewController {
     }
     
 
+    @IBAction func didTapOnNevermind(sender: UITapGestureRecognizer) {
+        println("registering tap")
+    }
+    
+    
     /*
     // MARK: - Navigation
 
