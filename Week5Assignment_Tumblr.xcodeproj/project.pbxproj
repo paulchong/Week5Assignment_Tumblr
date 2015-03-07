@@ -17,6 +17,8 @@
 		880EBB421AA8CDA1001639B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB411AA8CDA1001639B4 /* HomeViewController.swift */; };
 		880EBB441AA9FE5F001639B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB431AA9FE5F001639B4 /* AccountViewController.swift */; };
 		880EBB461AAA49F3001639B4 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB451AAA49F3001639B4 /* ComposeViewController.swift */; };
+		880EBB481AAB9F6D001639B4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB471AAB9F6D001639B4 /* SearchViewController.swift */; };
+		880EBB4A1AAB9F9A001639B4 /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EBB491AAB9F9A001639B4 /* TrendingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		880EBB411AA8CDA1001639B4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		880EBB431AA9FE5F001639B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		880EBB451AAA49F3001639B4 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		880EBB471AAB9F6D001639B4 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		880EBB491AAB9F9A001639B4 /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				880EBB1F1AA8132B001639B4 /* AppDelegate.swift */,
 				880EBB211AA8132B001639B4 /* ViewController.swift */,
 				880EBB231AA8132B001639B4 /* Main.storyboard */,
+				880EBB491AAB9F9A001639B4 /* TrendingViewController.swift */,
+				880EBB471AAB9F6D001639B4 /* SearchViewController.swift */,
 				880EBB451AAA49F3001639B4 /* ComposeViewController.swift */,
 				880EBB431AA9FE5F001639B4 /* AccountViewController.swift */,
 				880EBB411AA8CDA1001639B4 /* HomeViewController.swift */,
@@ -225,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				880EBB221AA8132B001639B4 /* ViewController.swift in Sources */,
+				880EBB4A1AAB9F9A001639B4 /* TrendingViewController.swift in Sources */,
+				880EBB481AAB9F6D001639B4 /* SearchViewController.swift in Sources */,
 				880EBB441AA9FE5F001639B4 /* AccountViewController.swift in Sources */,
 				880EBB401AA8155A001639B4 /* TabBarViewController.swift in Sources */,
 				880EBB461AAA49F3001639B4 /* ComposeViewController.swift in Sources */,

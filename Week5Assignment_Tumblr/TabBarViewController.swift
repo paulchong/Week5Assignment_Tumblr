@@ -12,10 +12,16 @@ class TabBarViewController: UIViewController {
 
     // setting up buttons in tab bar
     @IBOutlet weak var homeButton: UIButton!
-    var homeIsHighLighted:Bool = false
-    
     @IBOutlet weak var accountButton: UIButton!
-    var accountIsHighLighted:Bool = false
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var trendingButton: UIButton!
+    
+    //create button array
+    @IBOutlet var buttons: [UIButton]!
+    
+    var selectedIndex: Int!
+    
+    
     
     // calling and initializing images from images folder
     let home_icon = UIImage(named: "home_icon") as UIImage?
@@ -24,6 +30,9 @@ class TabBarViewController: UIViewController {
     let trending_selected_icon = UIImage(named: "trending_selected_icon") as UIImage?
     let account_icon = UIImage(named: "account_icon") as UIImage?
     let account_selected_icon = UIImage(named: "account_selected_icon") as UIImage?
+    let search_icon = UIImage(named: "search_icon") as UIImage?
+    let search_selected_icon = UIImage(named: "search_selected_icon") as UIImage?
+
     
     
     // setting up the subviews
@@ -44,7 +53,10 @@ class TabBarViewController: UIViewController {
         homeButton.setImage(home_selected_icon, forState: .Highlighted)
         accountButton.setImage(account_icon, forState: .Normal)
         accountButton.setImage(account_selected_icon, forState: .Highlighted)
-
+        trendingButton.setImage(trending_icon, forState: .Normal)
+        trendingButton.setImage(trending_selected_icon, forState: .Highlighted)
+        searchButton.setImage(search_icon, forState: .Normal)
+        searchButton.setImage(search_selected_icon, forState: .Highlighted)
         
         // defining storyboards
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -89,16 +101,6 @@ class TabBarViewController: UIViewController {
 
     
     @IBAction func didPressHomeButton(sender: UIButton) {
-        dispatch_async(dispatch_get_main_queue(), {
-            if self.homeIsHighLighted == false{
-                sender.highlighted = true;
-                self.homeIsHighLighted = true
-            }else{
-                sender.highlighted = false;
-                self.homeIsHighLighted = false
-            }
-        })
-
         hideViewContainers()
         homeViewContainer.hidden = false
     }
@@ -112,15 +114,6 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func didPressAccountButton(sender: UIButton) {
-        dispatch_async(dispatch_get_main_queue(), {
-            if self.accountIsHighLighted == false{
-                sender.highlighted = true;
-                self.accountIsHighLighted = true
-            }else{
-                sender.highlighted = false;
-                self.accountIsHighLighted = false
-            }
-        })
         hideViewContainers()
         accountViewContainer.hidden = false
     }
@@ -137,13 +130,31 @@ class TabBarViewController: UIViewController {
         
     }
     
-    // function to make all buttons unhighlighted
     
-    func unhighlightButtons(){
-        println("unhighlightButtons working")
-        homeIsHighLighted = false
-        accountIsHighLighted = false
+    
+    @IBAction func didPressTabBar(sender: UIButton) {
+        println(sender.tag)
+        selectedIndex = sender.tag
+        
+        for button in buttons {
+            button.highlighted = false
+        }
+
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            if self.buttons[self.selectedIndex].highlighted == false{
+                sender.highlighted = true;
+                self.buttons[self.selectedIndex].highlighted = true
+            }else{
+                sender.highlighted = false;
+                self.buttons[self.selectedIndex].highlighted = false
+            }
+        })
+        
+        
     }
+    
+    
     
     
 }
