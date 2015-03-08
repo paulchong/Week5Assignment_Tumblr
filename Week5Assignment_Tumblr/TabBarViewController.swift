@@ -32,9 +32,6 @@ class TabBarViewController: UIViewController {
 
     
     // setting up the subviews
-    @IBOutlet weak var composeViewContainer: UIView!
-    var composeViewController: ComposeViewController!
-
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
     var accountViewController: UIViewController!
@@ -61,24 +58,14 @@ class TabBarViewController: UIViewController {
         
         // defining storyboards
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-        // compose view controller
-        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as ComposeViewController
-        
-        addChildViewController(composeViewController)
-        composeViewController.view.frame = composeViewContainer.frame
-        composeViewContainer.addSubview(composeViewController.view)
-        composeViewController.didMoveToParentViewController(self)
-
-        composeViewContainer.hidden = true
-        
+      
         // all other view controllers
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         
-        viewControllersArray = [homeViewController, searchViewController, composeViewController, accountViewController, trendingViewController]
+        viewControllersArray = [homeViewController, searchViewController, searchViewController, accountViewController, trendingViewController]
         
         addChildViewController(viewControllersArray[selectedIndex])
         viewControllersArray[selectedIndex].view.frame = contentViewContainer.frame
@@ -92,21 +79,13 @@ class TabBarViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBAction func didPressComposeButton(sender: UIButton) {
-        composeViewContainer.hidden = false
-    }
-    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//        var destinationVC = segue.destinationViewController as UIViewController
+//        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+//        destinationVC.transitioningDelegate = self
+//        
+//    }
+        
     @IBAction func didPressTabBar(sender: UIButton) {
         println(sender.tag)
         selectedIndex = sender.tag
@@ -130,11 +109,7 @@ class TabBarViewController: UIViewController {
         contentViewContainer.addSubview(viewControllersArray[selectedIndex].view)
         viewControllersArray[selectedIndex].didMoveToParentViewController(self)
         
-        
     }
-    
-    
-    
     
 }
 

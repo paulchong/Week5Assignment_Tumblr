@@ -81,6 +81,30 @@
                                             <outletCollection property="gestureRecognizers" destination="DTQ-67-1Ty" appends="YES" id="4S2-wa-rGb"/>
                                         </connections>
                                     </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_icon" id="Yiq-eB-zkU">
+                                        <rect key="frame" x="22" y="152" width="75" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="video_icon" id="UAk-QP-n5Q">
+                                        <rect key="frame" x="225" y="150" width="75" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="quote_icon" id="8rG-pV-LGc">
+                                        <rect key="frame" x="123" y="152" width="75" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="link_icon" id="cnf-iy-8Gf">
+                                        <rect key="frame" x="22" y="264" width="75" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chat_icon" id="9nQ-nf-Dav">
+                                        <rect key="frame" x="125" y="262" width="75" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="X1B-6E-hxl">
+                                        <rect key="frame" x="226" y="263" width="75" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.080693417369419734" green="0.20904516319863012" blue="0.32175268308080807" alpha="1" colorSpace="calibratedRGB"/>
@@ -154,7 +178,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="w4r-GM-ZE9">
             <objects>
-                <viewController id="5C2-ZY-lFS" customClass="TabBarViewController" customModule="Week5Assignment_Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabBarViewController" id="5C2-ZY-lFS" customClass="TabBarViewController" customModule="Week5Assignment_Tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WG1-Qv-5KP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,8 +219,8 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="didPressComposeButton:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="tBx-Rz-KVu"/>
                                             <action selector="didPressTabBar:" destination="5C2-ZY-lFS" eventType="touchUpInside" id="Hc3-kR-ick"/>
+                                            <segue destination="db4-7k-VhB" kind="modal" id="eUL-Cm-5Oa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MdY-hb-zPz" userLabel="accountButton">
@@ -225,16 +249,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="eug-sG-Jkc" userLabel="composeView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="accountButton" destination="MdY-hb-zPz" id="efN-nG-Nej"/>
-                        <outlet property="composeViewContainer" destination="eug-sG-Jkc" id="bJg-mx-CJD"/>
                         <outlet property="contentViewContainer" destination="mh9-OK-CpV" id="k4X-rO-old"/>
                         <outlet property="homeButton" destination="oG4-9k-Sfy" id="JnD-VM-kND"/>
                         <outlet property="searchButton" destination="sJ6-TC-xnv" id="eqi-Ef-BUi"/>
@@ -254,16 +273,22 @@
     <resources>
         <image name="account" width="320" height="524"/>
         <image name="account_icon" width="35" height="35"/>
+        <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
+        <image name="link_icon" width="75" height="95"/>
         <image name="nevermind" width="320" height="53"/>
+        <image name="photo_icon" width="75" height="95"/>
+        <image name="quote_icon" width="75" height="96"/>
         <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
+        <image name="text_icon" width="75" height="95"/>
         <image name="trending" width="301" height="225"/>
         <image name="trending_icon" width="35" height="35"/>
+        <image name="video_icon" width="75" height="95"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
