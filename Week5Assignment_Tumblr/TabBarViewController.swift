@@ -70,6 +70,7 @@ class TabBarViewController: UIViewController {
         composeViewContainer.addSubview(composeViewController.view)
         composeViewController.didMoveToParentViewController(self)
 
+        composeViewContainer.hidden = true
         
         // all other view controllers
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
@@ -123,7 +124,11 @@ class TabBarViewController: UIViewController {
                 self.buttons[self.selectedIndex].highlighted = false
             }
         })
-
+        
+        addChildViewController(viewControllersArray[selectedIndex])
+        viewControllersArray[selectedIndex].view.frame = contentViewContainer.frame
+        contentViewContainer.addSubview(viewControllersArray[selectedIndex].view)
+        viewControllersArray[selectedIndex].didMoveToParentViewController(self)
         
         
     }
