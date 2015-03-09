@@ -49,13 +49,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_feed" id="8Vp-RY-pRN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="loading-1" id="rXF-n3-1br">
+                                <rect key="frame" x="129" y="275" width="61" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="hfk-hL-sbv">
+                                <rect key="frame" x="0.0" y="0.0" width="360" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="28B-db-54b">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.083723888487533565" green="0.1467496680526397" blue="0.37831439393939392" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingImage" destination="rXF-n3-1br" id="yOx-DO-gMI"/>
+                        <outlet property="searchImage" destination="28B-db-54b" id="i4D-FP-9bR"/>
+                        <outlet property="searchScrollView" destination="hfk-hL-sbv" id="cUN-CE-4Sb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCb-EY-SOx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +128,13 @@
                         <color key="backgroundColor" red="0.080693417370000006" green="0.20904516319999999" blue="0.32175268309999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
+                        <outlet property="chatImage" destination="9nQ-nf-Dav" id="4jZ-Hd-hNW"/>
+                        <outlet property="linkImage" destination="cnf-iy-8Gf" id="9Ye-o2-bpV"/>
+                        <outlet property="photoImage" destination="Yiq-eB-zkU" id="szL-0K-wRn"/>
+                        <outlet property="quoteImage" destination="8rG-pV-LGc" id="Btp-Un-LV4"/>
                         <outlet property="tapGestureRecognizer" destination="DTQ-67-1Ty" id="44d-Rj-FKx"/>
+                        <outlet property="textImage" destination="X1B-6E-hxl" id="g9d-WX-sZq"/>
+                        <outlet property="videoImage" destination="UAk-QP-n5Q" id="Tyk-v0-3dm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEi-gL-X1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,13 +301,14 @@
         <image name="home_overlay" width="320" height="100"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
+        <image name="loading-1" width="61" height="19"/>
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
-        <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
         <image name="text_icon" width="75" height="95"/>
         <image name="trending" width="301" height="225"/>
+        <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
         <image name="video_icon" width="75" height="95"/>
     </resources>
